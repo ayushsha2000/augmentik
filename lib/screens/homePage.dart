@@ -24,37 +24,34 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => DummyLogicBloc(),
-      child: Scaffold(
-        floatingActionButton: FloatingActionButton(
-          backgroundColor: Colors.black, 
+    return Scaffold(
+      floatingActionButton: FloatingActionButton(
+          backgroundColor: Colors.black,
           child: Icon(Icons.info),
           onPressed: () {
-          showDialog(context: context, builder: (context)=>FormDialog());
-        }),
-        appBar: AppBar(
-          title: const Text('HomePage'),
-        ),
-        body: BlocListener<DummyLogicBloc, DummyLogicState>(
-          listener: (context, state) {
-            if (state is DummyLogicFetchError) {
-              ScaffoldMessenger.of(context).showSnackBar(
-                SnackBar(
-                  content: Text(state.message!),
-                ),
-              );
+            showDialog(context: context, builder: (context) => FormDialog());
+          }),
+      appBar: AppBar(
+        title: const Text('HomePage'),
+      ),
+      body: BlocListener<DummyLogicBloc, DummyLogicState>(
+        listener: (context, state) {
+          if (state is DummyLogicFetchError) {
+            ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(
+                content: Text(state.message!),
+              ),
+            );
+          }
+        },
+        child: BlocBuilder<DummyLogicBloc, DummyLogicState>(
+          bloc: context.read(),
+          builder: (context, state) {
+            if (state is DummyLogicLoaded) {
+              return _buildGrid(context, state.product);
             }
+            return Container();
           },
-          child: BlocBuilder<DummyLogicBloc, DummyLogicState>(
-            bloc: context.read(),
-            builder: (context, state) {
-              if (state is DummyLogicLoaded) {
-                return _buildGrid(context, state.product);
-              }
-              return Container();
-            },
-          ),
         ),
       ),
     );

@@ -17,7 +17,6 @@ class DummyLogicBloc extends Bloc<DummyLogicEvent, DummyLogicState> {
         final product = await _apiRepository.fetchProductList();
         print('productttttttttttttttt $product');
         emit(DummyLogicLoaded(product));
-        
       } catch (e) {
         emit(DummyLogicFetchError(e.toString()));
       }

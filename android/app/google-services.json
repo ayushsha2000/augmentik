@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "729505642941",
+    "project_id": "taskagumentik",
+    "storage_bucket": "taskagumentik.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:729505642941:android:5a8cb5c92be60eb8313ad4",
+        "android_client_info": {
+          "package_name": "com.example.agumentik"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "729505642941-f5u7rr3isettoq757597lg7rrs8tc9hr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.agumentik",
+            "certificate_hash": "f1917860bdebc777df85a14440e3bcc0bae5695b"
+          }
+        },
+        {
+          "client_id": "729505642941-81p3o3ggqk9ppte6m2l6avviu8v4dbka.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC5IKX0GNyGSydNpQ5oWcn9qKUqSp8XUIY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "729505642941-81p3o3ggqk9ppte6m2l6avviu8v4dbka.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

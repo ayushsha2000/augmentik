@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 class FormDialog extends StatefulWidget {
   const FormDialog({Key? key}) : super(key: key);
@@ -81,8 +82,17 @@ class _FormDialogState extends State<FormDialog> {
               String message;
 
               try {
-                // final collection =
-                //     FirebaseFirestore.instance.collection('document');
+                FirebaseFirestore.instance
+                    .collection('users')
+                    .add({
+                      'name': _namecontroller.text,
+                      'mobile': _contactcontroller.text,
+                      // 'sharedWith': _sharedWith,
+                    })
+                    .then((documentReference) {})
+                    .catchError((error) {
+                      print(error);
+                    });
 
                 message = 'Details sent successfully';
               } catch (e) {

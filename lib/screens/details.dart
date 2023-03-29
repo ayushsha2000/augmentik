@@ -70,11 +70,13 @@ class _DetailsPageState extends State<DetailsPage> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   productsDetails(
-                      icon:Icons.money,value: widget.price?.toDouble()??0,),
+                    icon: Icons.money,
+                    value: widget.price?.toDouble() ?? 0,
+                  ),
                   productsDetails(
-                      icon:Icons.percent,value: widget.discountPercentage ?? 0),
-                 productsDetails(
-                      icon:Icons.star,value: widget.rating ?? 0),
+                      icon: Icons.percent,
+                      value: widget.discountPercentage ?? 0),
+                  productsDetails(icon: Icons.star, value: widget.rating ?? 0),
                 ],
               ),
             )
@@ -87,9 +89,15 @@ class _DetailsPageState extends State<DetailsPage> {
   Row productsDetails({required IconData icon, required double value}) {
     return Row(
       children: [
-        Icon(icon, color: Colors.white,),
-        SizedBox(width:4.0),
-        Text(value.toString(), style: TextStyle(color: Colors.white),)
+        Icon(
+          icon,
+          color: Colors.white,
+        ),
+        SizedBox(width: 4.0),
+        Text(
+          value.toString(),
+          style: TextStyle(color: Colors.white),
+        )
       ],
     );
   }
